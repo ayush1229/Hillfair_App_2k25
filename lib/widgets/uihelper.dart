@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+// usage example: UiHelper.CustomImage("imagename.png")
 class UiHelper {
-  
+
   static Image CustomImage({required String img}) {
     return Image.asset("assets/images/$img");
   }
@@ -23,4 +24,21 @@ class UiHelper {
       ),
     );
   }
+
+  static Container CustomButton(VoidCallback callback) {
+    return Container(
+      height: 18,
+      width: 30,
+
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.green),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Center(
+        child: Text("Add", style: TextStyle(fontSize: 6, color: Colors.green)),
+      ),
+    );
+  }
 }
+
