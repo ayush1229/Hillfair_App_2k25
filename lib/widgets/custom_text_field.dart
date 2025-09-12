@@ -10,9 +10,10 @@ class CustomTextField extends StatelessWidget {
   final Color borderColor;
   final double hintFontSize;
   final FontWeight hintFontWeight;
+  final Widget? prefixIcon; // <-- Added this
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     this.width = 363,
@@ -22,7 +23,8 @@ class CustomTextField extends StatelessWidget {
     this.borderColor = Colors.black,
     this.hintFontSize = 27,
     this.hintFontWeight = FontWeight.w300,
-  }) : super(key: key);
+    this.prefixIcon, // <-- Optional by default (null)
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class CustomTextField extends StatelessWidget {
           ),
           filled: true,
           fillColor: backgroundColor,
+          prefixIcon: prefixIcon, // <-- Only shows if not null
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: BorderSide(color: borderColor),
@@ -52,3 +55,16 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
+// Example usage:
+
+// CustomTextField(
+//   controller: myController,
+//   hintText: "Enter your name",
+//   prefixIcon: Icon(Icons.person), // shows icon
+// ),
+
+// CustomTextField(
+//   controller: myController,
+//   hintText: "No prefix here", // no icon
+// ),

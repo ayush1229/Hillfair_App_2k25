@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
   final double iconSize;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.text = "Button",
     this.fontSize = 21,
@@ -38,7 +38,7 @@ class CustomButton extends StatelessWidget {
     this.suffixIcon,
     this.iconColor = Colors.green,
     this.iconSize = 20,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
