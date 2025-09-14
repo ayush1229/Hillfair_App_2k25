@@ -17,6 +17,8 @@ class CustomButton extends StatelessWidget {
   final Color backgroundColor;
   final Color borderColor;
 
+  final List<BoxShadow>? boxShadow;
+
   /// Optional icons
   final IconData? prefixIcon;
   final IconData? suffixIcon;
@@ -34,6 +36,14 @@ class CustomButton extends StatelessWidget {
     this.borderRadius = 10,
     this.backgroundColor = Colors.white,
     this.borderColor = Colors.green,
+    this.boxShadow = const [
+      BoxShadow(
+        color: Colors.black26,
+        blurRadius: 6,
+        offset: Offset(2, 4),
+        spreadRadius: 1,
+      ),
+    ],
     this.prefixIcon,
     this.suffixIcon,
     this.iconColor = Colors.green,
